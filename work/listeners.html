@@ -1,0 +1,31 @@
+<script src="https://plugin.humdrum.org/scripts/humdrum-notation-plugin-worker.js"></script>
+
+<script>
+
+
+// First load the score metadata from _includes/metadata/works.json.
+
+let SCORES = {};
+SCORES.metadata = {};
+SCORES.metadata.works = {% include metadata/works.json %};
+SCORES.lookup = {};
+SCORES.hnp_options = {
+	source: "my-score",
+	spacingLinear: 0.4,
+	spacingNonLinear: 0.45,
+	spacingSystem: 10,
+	mnumInterval: 5,
+	autoResize: "true",
+};
+
+
+// This runs when the work page has loaded.
+// It finds the requested score ID in the URL and displays that score.
+
+document.addEventListener("DOMContentLoaded", function () {
+	SCORES.workid = new URLSearchParams(window.location.search).get("id");
+	SCORES.lookup.works = createLookup(SCORES.metadata.works);
+	displayWork(SCORES.workid);
+});
+
+</script>

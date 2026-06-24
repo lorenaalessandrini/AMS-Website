@@ -1,0 +1,170 @@
+<script>
+
+
+// Displays one score on the work page.
+// If no ID is supplied, it uses the first score in the metadata.
+
+function displayWork(id) {
+	if (!id) {
+		id = SCORES.metadata.works[0].ID;
+	}
+
+	let workinfo = SCORES.lookup.works[id];
+	if (!workinfo) {
+		console.error(`ERROR: Cannot find work ID ${id}`);
+		return;
+	}
+
+	SCORES.workid = id;
+
+	let hnpOptions = JSON.parse(JSON.stringify(SCORES.hnp_options));
+	hnpOptions.url = getRawHumdrumUrl(workinfo["Humdrum URL"]);
+	hnpOptions.postFunction = removeWait;
+
+	displayHumdrum(hnpOptions);
+	displayWorkInfo(workinfo);
+}
+
+
+// Creates a lookup table from an array of metadata objects.
+// This lets us find one work quickly by its ID.
+
+function createLookup(dataArray) {
+	let output = {};
+	for (let entry of dataArray) {
+		output[entry.ID] = entry;
+	}
+	return output;
+}
+
+
+// Shows the basic metadata above the score.
+// This uses only the simple fields in works.json.
+
+function displayWorkInfo(workinfo) {
+	let github = workinfo["Humdrum URL"];
+	let humdrum = getRawHumdrumUrl(github);
+	let vhvUrl = `https://verovio.humdrum.org/?k=e&file=${encodeURIComponent(humdrum)}`;
+	let tbody = document.querySelector("tbody#work-info-body");
+	if (!tbody) {
+		return;
+	}
+
+	tbody.innerHTML = `
+		<tr>
+			<td>
+				${workItem("Title", getTitle(workinfo))}
+				${workItem("Composer", workinfo.Composer)}
+				${workItem("Genre", workinfo.Genre)}
+				${workItem("Voices", workinfo.Voices)}
+			</td>
+			<td>
+				${workItem("ID", workinfo.ID)}
+				${workItem("File", workinfo.FILEBASE)}
+			</td>
+			<td>
+				<div class="work-item"><b>View:</b> <a target="_blank" href="${vhvUrl}">VHV</a> | <a target="_blank" href="${github}">GitHub</a></div>
+				<div class="work-item"><b>Humdrum:</b> <a target="_blank" href="${humdrum}">Raw file</a></div>
+			</td>
+		</tr>
+	`;
+}
+
+
+// Builds one labeled line of metadata.
+// If the value is empty, it returns an empty string so blank fields do not show.
+
+function workItem(label, value) {
+	return value ? `<div class="work-item"><b>${label}:</b> ${value}</div>` : "";
+}
+
+
+// Combines Title and Subtitle into one display title.
+// If only one exists, it uses the one that exists.
+
+function getTitle(entry) {
+	if (entry.Title && entry.Subtitle) {
+		return `${entry.Title}, ${entry.Subtitle}`;
+	}
+	return entry.Title || entry.Subtitle || "";
+}
+
+
+// Converts a normal GitHub page URL into a raw file URL.
+// Verovio needs the raw file contents, not the human-facing GitHub page.
+
+function getRawHumdrumUrl(url) {
+	return url
+		.replace("https://github.com/", "https://raw.githubusercontent.com/")
+		.replace("/blob/", "/")
+		.replace("/tree/", "/");
+}
+
+
+// Removes the wait cursor after Verovio has displayed the score.
+
+function removeWait() {
+	document.body.classList.remove("wait");
+}
+
+
+// OPTIONAL MEI VERSION FOR STUDENTS
+//
+// The current site displays Humdrum files. If your project uses MEI files instead,
+// you can use the example below as a starting point.
+//
+// 1. Add an "MEI URL" column to _includes/metadata/works.json.
+// 2. In work/listeners.html, add the Verovio script:
+//    Use the Verovio script from https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js
+// 3. In work/index.md, replace this Humdrum element:
+//    The script element with id="my-score"
+//    with this notation container:
+//    A div element with id="notation"
+// 4. Replace displayWork(SCORES.workid) with displayMEIWork(SCORES.workid).
+
+/*
+
+// Displays one MEI score on the work page.
+// It loads the MEI file, gives it to Verovio, and puts the SVG notation on the page.
+
+async function displayMEIWork(id) {
+	if (!id) {
+		id = SCORES.metadata.works[0].ID;
+	}
+
+	let workinfo = SCORES.lookup.works[id];
+	if (!workinfo) {
+		console.error(`ERROR: Cannot find work ID ${id}`);
+		removeWait();
+		return;
+	}
+
+	SCORES.workid = id;
+	displayWorkInfo(workinfo);
+
+	let response = await fetch(workinfo["MEI URL"]);
+	let mei = await response.text();
+
+	await verovio.module.onRuntimeInitialized;
+
+	let toolkit = new verovio.toolkit();
+	toolkit.setOptions({
+		scale: 45,
+		pageWidth: 2100,
+		pageHeight: 2970,
+		adjustPageHeight: true,
+	});
+
+	toolkit.loadData(mei);
+
+	let notation = document.querySelector("#notation");
+	if (notation) {
+		notation.innerHTML = toolkit.renderToSVG(1);
+	}
+
+	removeWait();
+}
+
+*/
+
+</script>

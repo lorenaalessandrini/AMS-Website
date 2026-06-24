@@ -1,0 +1,12 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+    <nav class="site-nav">
+      {%- assign pages_list = site.pages | where_exp: "item", "item.title" | sort: "order" -%}
+      {%- for my_page in pages_list -%}
+        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>

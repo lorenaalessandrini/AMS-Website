@@ -1,0 +1,17 @@
+<script>
+
+let METADATA        = {% include metadata/works.json %};
+let INDEX_composer  = "Composer";
+let INDEX_title     = "Title";
+let INDEX_genre     = "Genre";
+let INDEX_voice     = "Voices";
+
+
+// This runs when the browse page has loaded.
+// It displays all works in the browse table.
+
+document.addEventListener("DOMContentLoaded", function () {
+	displayBrowseTable(METADATA, "#list");
+});
+
+</script>

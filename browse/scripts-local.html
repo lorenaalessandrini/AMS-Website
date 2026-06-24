@@ -1,0 +1,70 @@
+{% include_relative scripts-listeners.html %}
+
+<script>
+
+
+// Draws the browse table on the page.
+// It receives a list of works and turns them into HTML table rows.
+
+function displayBrowseTable(data, selector) {
+	let element = document.querySelector(selector || "#list");
+	if (!element) {
+		return;
+	}
+	let headings = [INDEX_composer, INDEX_title, INDEX_genre, INDEX_voice];
+	element.innerHTML = `
+		<table class="browse">
+			<thead>${makeTableHeader(headings)}</thead>
+			<tbody>${makeTableBody(headings, data)}</tbody>
+		</table>
+	`;
+}
+
+
+// Builds the header row for the browse table.
+// The headings array contains labels such as Composer, Title, Genre, and Voices.
+
+function makeTableHeader(headings) {
+	return `<tr><th>${headings.join("</th><th>")}</th></tr>`;
+}
+
+
+// Builds all of the body rows for the browse table.
+// Each work becomes one table row, and each metadata field becomes one table cell.
+
+function makeTableBody(headings, data) {
+	return data.map(function(entry) {
+		let cells = headings.map(function(heading) {
+			let value = entry[heading] || "";
+			let tdClass = heading.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9_-]/g, "").toLowerCase();
+			if (heading === INDEX_title) {
+				value = `<a href="${getScoreURL(entry)}">${getTitle(entry)}</a>`;
+			}
+			return `<td class="${tdClass}">${value}</td>`;
+		});
+		return `<tr>${cells.join("")}</tr>`;
+	}).join("");
+}
+
+
+// Combines the title and subtitle into the text shown in the browse table.
+// If a work has both, the subtitle is shown after a comma.
+
+function getTitle(entry) {
+	let title = entry.Title || "";
+	let subtitle = entry.Subtitle || "";
+	if (title && subtitle) {
+		return `${title}, <i>${subtitle}</i>`;
+	}
+	return title || subtitle;
+}
+
+
+// Creates the link from a browse-table title to the individual work page.
+// encodeURIComponent keeps special characters safe inside a URL.
+
+function getScoreURL(entry) {
+	return `{{ "/work/" | relative_url }}?id=${encodeURIComponent(entry.ID || "")}`;
+}
+
+</script>

@@ -1,0 +1,148 @@
+[
+	{
+		"ID": "Ren1001a",
+		"Composer": "Renaldo",
+		"Title": "Missa Sine nomine",
+		"Subtitle": "Kyrie",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1001a-Missa_Sine_nomine-Kyrie--Bologna_Q19.krn",
+		"FILEBASE": "Ren1001a-Missa_Sine_nomine-Kyrie--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1001b",
+		"Composer": "Renaldo",
+		"Title": "Missa Sine nomine",
+		"Subtitle": "Gloria",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1001b-Missa_Sine_nomine-Gloria--Bologna_Q19.krn",
+		"FILEBASE": "Ren1001b-Missa_Sine_nomine-Gloria--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1001d",
+		"Composer": "Renaldo",
+		"Title": "Missa Sine nomine",
+		"Subtitle": "Sanctus",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1001d-Missa_Sine_nomine-Sanctus--Bologna_Q19.krn",
+		"FILEBASE": "Ren1001d-Missa_Sine_nomine-Sanctus--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1001e",
+		"Composer": "Renaldo",
+		"Title": "Missa Sine nomine",
+		"Subtitle": "Agnus",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1001e-Missa_Sine_nomine-Agnus--Bologna_Q19.krn",
+		"FILEBASE": "Ren1001e-Missa_Sine_nomine-Agnus--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1002a",
+		"Composer": "Renaldo",
+		"Title": "Missa Benedictus Dominus Deus",
+		"Subtitle": "Kyrie",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1002a-Missa_Benedictus_Dominus_Deus-Kyrie--Bologna_Q19.krn",
+		"FILEBASE": "Ren1002a-Missa_Benedictus_Dominus_Deus-Kyrie--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1002b",
+		"Composer": "Renaldo",
+		"Title": "Missa Benedictus Dominus Deus",
+		"Subtitle": "Gloria",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1002b-Missa_Benedictus_Dominus_Deus-Gloria--Bologna_Q19.krn",
+		"FILEBASE": "Ren1002b-Missa_Benedictus_Dominus_Deus-Gloria--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1002d",
+		"Composer": "Renaldo",
+		"Title": "Missa Benedictus Dominus Deus",
+		"Subtitle": "Sanctus",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1002d-Missa_Benedictus_Dominus_Deus-Sanctus--Bologna_Q19.krn",
+		"FILEBASE": "Ren1002d-Missa_Benedictus_Dominus_Deus-Sanctus--Bologna_Q19"
+	},
+	{
+		"ID": "Ren1002e",
+		"Composer": "Renaldo",
+		"Title": "Missa Benedictus Dominus Deus",
+		"Subtitle": "Agnus",
+		"Genre": "mass",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren1002e-Missa_Benedictus_Dominus_Deus-Agnus--Bologna_Q19.krn",
+		"FILEBASE": "Ren1002e-Missa_Benedictus_Dominus_Deus-Agnus--Bologna_Q19"
+	},
+	{
+		"ID": "Ren2001",
+		"Composer": "Renaldo",
+		"Title": "Regina celi letare",
+		"Genre": "motet",
+		"Voices": "5",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2001-Regina_celi.krn",
+		"FILEBASE": "Ren2001-Regina_celi"
+	},
+	{
+		"ID": "Ren2002",
+		"Composer": "Renaldo",
+		"Title": "Hec dies quam fecit",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2002-Hec_dies_quam_fecit--Bologna_Q19.krn",
+		"FILEBASE": "Ren2002-Hec_dies_quam_fecit--Bologna_Q19"
+	},
+	{
+		"ID": "Ren2005",
+		"Composer": "Renaldo",
+		"Title": "Paradisi portas aperuit",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2005-Paradisi_portas_aperuit.krn",
+		"FILEBASE": "Ren2005-Paradisi_portas_aperuit"
+	},
+	{
+		"ID": "Ren2006",
+		"Composer": "Renaldo",
+		"Title": "Illuminavit eum Dominus",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2006-Illuminavit_eum_Dominus--Bologna_Q19.krn",
+		"FILEBASE": "Ren2006-Illuminavit_eum_Dominus--Bologna_Q19"
+	},
+	{
+		"ID": "Ren2007",
+		"Composer": "Renaldo",
+		"Title": "O Jesu Christe miserere mei",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2007-O_Jesu_Christe_miserere_mei--Bologna_Q19.krn",
+		"FILEBASE": "Ren2007-O_Jesu_Christe_miserere_mei--Bologna_Q19"
+	},
+	{
+		"ID": "Ren2008",
+		"Composer": "Renaldo",
+		"Title": "O Domine Jesu Christe",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2008-O_Domine_Jesu_Christe--Bologna_Q19.krn",
+		"FILEBASE": "Ren2008-O_Domine_Jesu_Christe--Bologna_Q19"
+	},
+	{
+		"ID": "Ren2009",
+		"Composer": "Renaldo",
+		"Title": "Ave sanctissima Maria",
+		"Genre": "motet",
+		"Voices": "4",
+		"Humdrum URL": "https://github.com/benory/AMS-Institute-Scores/tree/main/Ren2009-Ave_sanctissima_Maria--Bologna_Q19.krn",
+		"FILEBASE": "Ren2009-Ave_sanctissima_Maria--Bologna_Q19"
+	},
+	{
+		"ID": "ID"
+	}
+]
